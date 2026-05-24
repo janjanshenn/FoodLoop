@@ -1,0 +1,19 @@
+# Environment configuration (secrets, DB credentials)
+.env
+
+# Session cookies and test artifacts
+api/cookies.txt
+api/cookie_*.txt
+api/cookies_*.txt
+*.log
+
+# Dynamic user uploads (ignore images, keep folder structure via readme/htaccess)
+uploads/*
+!uploads/README.txt
+!uploads/.htaccess
+
+# OS / IDE configurations
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/sftp.json

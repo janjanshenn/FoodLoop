@@ -1,0 +1,18 @@
+# ============================================================
+# FoodLoop Root Apache Security Configuration (.htaccess)
+# ============================================================
+
+# Disable directory browsing/indexing
+Options -Indexes
+
+# Deny access to sensitive files
+<FilesMatch "^\.(env|git|htaccess)">
+    Order Allow,Deny
+    Deny from all
+</FilesMatch>
+
+# Prevent access to SQL database backups
+<FilesMatch "\.(sql|bak|log)$">
+    Order Allow,Deny
+    Deny from all
+</FilesMatch>
