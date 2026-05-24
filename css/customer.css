@@ -1,0 +1,441 @@
+/*
+ * FOODLoop – Customer Portal Styles
+ */
+
+#customer-layout .sidebar {
+    background-color: #1e1310;
+}
+
+#customer-layout .nav-item.active {
+    border-left-color: var(--color-accent);
+}
+
+.customer-food-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+    gap: var(--space-s);
+}
+
+.customer-food-card {
+    background-color: var(--bg-card);
+    border: 1px solid var(--border-color) !important;
+    border-radius: var(--radius-m) !important;
+    overflow: hidden;
+    box-shadow: var(--shadow-soft) !important;
+    transition: var(--transition-clean);
+}
+
+.customer-food-card:hover {
+    box-shadow: var(--shadow-medium) !important;
+    border-color: var(--color-accent) !important;
+}
+
+.customer-food-card img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+}
+
+.customer-food-card .card-content {
+    padding: var(--space-s);
+}
+
+.food-price {
+    font-family: 'Fraunces', serif;
+    font-size: 18px !important;
+    font-weight: 700 !important;
+    color: var(--color-accent) !important;
+    margin-bottom: var(--space-s);
+}
+
+.food-action-row {
+    display: flex;
+    gap: var(--space-xs);
+}
+
+.food-add-btn, .food-reserve-btn {
+    flex: 1;
+    font-size: 12px !important;
+    padding: 10px !important;
+    background-color: var(--color-accent) !important;
+    border-radius: var(--radius-s) !important;
+    box-shadow: none !important;
+}
+
+.food-add-btn:hover, .food-reserve-btn:hover {
+    background-color: var(--color-accent-hover) !important;
+}
+
+.food-reserve-btn {
+    background-color: var(--text-secondary) !important;
+}
+
+.food-reserve-btn:hover {
+    background-color: var(--text-primary) !important;
+}
+
+/* Cart widget items */
+.sidebar-cart-container {
+    margin-top: var(--space-m);
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+    padding-top: var(--space-s);
+    display: flex;
+    flex-direction: column;
+}
+
+.sidebar-cart-header {
+    font-size: 14px;
+    font-weight: 600;
+    margin-bottom: var(--space-s);
+}
+
+.sidebar-cart-body {
+    font-size: 13px;
+    color: var(--text-muted);
+}
+
+.sidebar-checkout-btn {
+    width: 100% !important;
+    background-color: var(--color-success) !important;
+    border-radius: var(--radius-s) !important;
+    padding: 12px !important;
+    margin-top: var(--space-s);
+    text-transform: none !important;
+    font-weight: 600 !important;
+}
+
+.sidebar-checkout-btn:hover {
+    background-color: #213c30 !important;
+    transform: translateY(-1px) !important;
+}
+
+.food-search-input {
+    width: 260px !important;
+    border-radius: var(--radius-s) !important;
+    border: 1px solid var(--border-color) !important;
+    padding: 10px var(--space-s) !important;
+    box-shadow: none !important;
+}
+
+.food-search-input:focus {
+    border-color: var(--color-accent) !important;
+    box-shadow: 0 0 0 3px rgba(217, 119, 6, 0.1) !important;
+}
+
+/* Out of Stock Styling */
+.customer-food-card.out-of-stock {
+    opacity: 0.65;
+    position: relative;
+}
+
+.customer-food-card.out-of-stock img {
+    filter: grayscale(100%);
+}
+
+.customer-food-card.out-of-stock .food-action-row button {
+    background-color: var(--text-muted) !important;
+    cursor: not-allowed;
+    pointer-events: none;
+}
+
+.out-of-stock-badge {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background-color: #E74C3C;
+    color: #FFFFFF;
+    padding: 4px var(--space-xs);
+    border-radius: var(--radius-s);
+    font-size: 11px;
+    font-weight: 600;
+    z-index: 5;
+    pointer-events: none;
+}
+
+/* Inline Reserve Layout Utilities */
+.flex-row {
+    display: flex;
+    flex-direction: row;
+}
+.align-center {
+    align-items: center;
+}
+.justify-between {
+    justify-content: space-between;
+}
+.gap-xs {
+    gap: 8px;
+}
+.w-full {
+    width: 100%;
+}
+.w-half {
+    width: calc(50% - 4px);
+}
+
+/* Inline Reserve Actions Group */
+.inline-reserve-actions {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    animation: fade-slide-in 0.25s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+@keyframes fade-slide-in {
+    from {
+        opacity: 0;
+        transform: translateY(4px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.qty-btn-group-inline {
+    display: flex;
+    align-items: center;
+    border: 1px solid var(--border-color);
+    border-radius: 20px;
+    background-color: #FAF9F6;
+    box-shadow: inset 0 1px 3px rgba(27, 36, 33, 0.04);
+    overflow: hidden;
+    height: 36px;
+}
+
+.inline-qty-btn {
+    background: none;
+    border: none;
+    color: var(--text-primary);
+    font-size: 16px;
+    font-weight: 700;
+    width: 36px;
+    height: 100%;
+    cursor: pointer;
+    transition: all var(--transition-clean);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.inline-qty-btn:hover {
+    background-color: rgba(217, 119, 6, 0.08);
+    color: var(--color-accent);
+}
+
+.inline-qty-val {
+    width: 36px;
+    text-align: center;
+    font-size: 14px;
+    font-weight: 700;
+    color: var(--text-primary);
+    border-left: 1px solid rgba(0, 0, 0, 0.04);
+    border-right: 1px solid rgba(0, 0, 0, 0.04);
+    line-height: 36px;
+}
+
+/* Dynamic Stock Pill Badge on Food Cards */
+.stock-pill {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-size: 11px !important;
+    font-weight: 700 !important;
+    padding: 3px 8px !important;
+    border-radius: 20px !important;
+    text-transform: uppercase !important;
+    letter-spacing: 0.5px !important;
+    border: 1px solid transparent !important;
+    display: inline-block !important;
+}
+
+.stock-pill.in-stock {
+    background-color: rgba(42, 77, 62, 0.08) !important;
+    color: var(--color-success) !important;
+    border-color: rgba(42, 77, 62, 0.15) !important;
+}
+
+.stock-pill.low-stock {
+    background-color: rgba(156, 56, 26, 0.08) !important;
+    color: var(--color-warning) !important;
+    border-color: rgba(156, 56, 26, 0.15) !important;
+    animation: pulse-border 2s infinite ease-in-out;
+}
+
+@keyframes pulse-border {
+    0%, 100% {
+        border-color: rgba(156, 56, 26, 0.15);
+    }
+    50% {
+        border-color: rgba(156, 56, 26, 0.4);
+    }
+}
+
+/* Tablet & Mobile App Shell / Sidebars / Forms / Tables */
+@media (max-width: 768px) {
+    /* Sticky Customer Bottom Cart widget */
+    #customer-layout .sidebar-cart-container {
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        background-color: #1e1310; /* Match customer sidebar theme */
+        margin-top: 0;
+        border-top: 1px solid rgba(255, 255, 255, 0.15);
+        padding: var(--space-s);
+        z-index: 1000;
+        box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.3);
+        display: flex !important;
+        flex-direction: row !important;
+        align-items: center;
+        justify-content: space-between;
+        box-sizing: border-box;
+    }
+
+    #customer-layout .sidebar-cart-header {
+        margin-bottom: 0;
+        border-bottom: none;
+        padding-bottom: 0;
+        font-size: 14px;
+        color: var(--text-light);
+    }
+
+    #customer-layout .sidebar-cart-body {
+        display: none !important; /* Hide list of items to keep it compact */
+    }
+
+    #customer-layout .sidebar-cart-footer {
+        margin-top: 0;
+        border-top: none;
+        padding-top: 0;
+        color: var(--text-light);
+        font-size: 14px;
+    }
+
+    #customer-layout .sidebar-checkout-btn {
+        width: auto !important;
+        margin-top: 0 !important;
+        margin-bottom: 0 !important;
+        padding: 8px 16px !important;
+        font-size: 13px !important;
+    }
+
+    /* Push food list content up so it is not covered by the sticky bottom cart */
+    #customer-layout .main-content {
+        padding-bottom: 80px;
+    }
+}
+
+/* Extra small mobile layout adaptation */
+@media (max-width: 600px) {
+    .food-search-input {
+        width: 100% !important;
+    }
+}
+
+/* Premium Sidebar Cart Styling */
+.sidebar-cart-empty {
+    text-align: center;
+    color: var(--text-muted);
+    padding: var(--space-s) 0;
+    margin: 0;
+}
+
+.cart-item-row {
+    background-color: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.06);
+    border-radius: var(--radius-s);
+    padding: 10px;
+    margin-bottom: var(--space-xs);
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    transition: var(--transition-clean);
+}
+
+.cart-item-row:hover {
+    background-color: rgba(255, 255, 255, 0.06);
+    border-color: rgba(217, 119, 6, 0.3);
+}
+
+.cart-item-details {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.cart-item-name {
+    font-weight: 600;
+    color: var(--text-light);
+    font-size: 13px;
+}
+
+.cart-item-subtotal {
+    font-weight: 700;
+    color: var(--color-accent);
+    font-size: 13px;
+}
+
+.cart-item-actions {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.qty-adjuster {
+    display: flex;
+    align-items: center;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 12px;
+    background-color: rgba(0, 0, 0, 0.2);
+    overflow: hidden;
+    height: 26px;
+}
+
+.qty-adjuster button {
+    background: none;
+    border: none;
+    color: var(--text-light);
+    font-size: 12px;
+    width: 26px;
+    height: 100%;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background 0.2s;
+    box-shadow: none !important;
+    padding: 0 !important;
+    margin: 0 !important;
+}
+
+.qty-adjuster button:hover {
+    background-color: rgba(217, 119, 6, 0.2);
+    color: var(--color-accent) !important;
+}
+
+.qty-adjuster span {
+    width: 24px;
+    text-align: center;
+    font-size: 12px;
+    font-weight: 700;
+    color: var(--text-light);
+    display: inline-block;
+    line-height: 26px;
+}
+
+.cart-remove-btn {
+    background: none !important;
+    border: none !important;
+    color: #e74c3c !important;
+    cursor: pointer !important;
+    padding: 0 4px !important;
+    font-size: 14px !important;
+    transition: color 0.2s !important;
+    box-shadow: none !important;
+    margin: 0 !important;
+    width: auto !important;
+}
+
+.cart-remove-btn:hover {
+    color: #c0392b !important;
+}

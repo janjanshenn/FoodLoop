@@ -1,0 +1,137 @@
+/*
+ * FOODLoop – Dashboard Stats & Metrics
+ */
+
+.flex-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: var(--space-m);
+}
+
+.dashboard-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: var(--space-s);
+    margin-bottom: var(--space-m);
+}
+
+/* Solid Dashboard Cards */
+.stat-card {
+    background-color: var(--bg-card);
+    padding: var(--space-m);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-m);
+    box-shadow: var(--shadow-soft);
+    text-align: left;
+    transition: var(--transition-clean);
+}
+
+.stat-card:hover {
+    border-color: var(--border-color);
+    box-shadow: var(--shadow-medium);
+}
+
+.stat-card h3 {
+    font-size: 13px;
+    color: var(--text-secondary);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-bottom: var(--space-xs);
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-weight: 600;
+}
+
+.stat-card .value {
+    font-family: 'Fraunces', serif;
+    font-size: 26px;
+    font-weight: 700;
+    color: var(--text-primary);
+    margin: 0;
+}
+
+.stat-card-warning {
+    border-left: 3px solid var(--color-warning);
+}
+
+.chart-grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: var(--space-s);
+    margin-bottom: var(--space-m);
+}
+
+@media (max-width: 1024px) {
+    .chart-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Solid boxes for listings and charts */
+.section-box {
+    background-color: var(--bg-card);
+    padding: var(--space-m);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-m);
+    box-shadow: var(--shadow-soft);
+    margin-bottom: var(--space-m);
+    overflow-x: auto;
+}
+
+.canvas-wrapper {
+    position: relative;
+    height: 260px;
+    width: 100%;
+}
+
+/* Admin Reservations stats dashboard grid */
+.reservation-stats-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 16px;
+    margin-bottom: 24px;
+}
+
+.res-stat-card {
+    background-color: var(--bg-card);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-m);
+    padding: 16px 20px;
+    display: flex;
+    flex-direction: column;
+    box-shadow: var(--shadow-soft);
+    transition: var(--transition-clean);
+}
+
+.res-stat-card:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-medium);
+}
+
+.res-stat-card.stat-pending {
+    border-left: 4px solid #F59E0B;
+}
+
+.res-stat-card.stat-confirmed {
+    border-left: 4px solid #10B981;
+}
+
+.res-stat-card.stat-completed {
+    border-left: 4px solid #3B82F6;
+}
+
+.res-stat-card .stat-label {
+    font-size: 12px;
+    font-weight: 600;
+    text-transform: uppercase;
+    color: var(--text-secondary);
+    letter-spacing: 0.5px;
+    margin-bottom: 6px;
+}
+
+.res-stat-card .stat-value {
+    font-size: 26px;
+    font-weight: 700;
+    color: var(--text-primary);
+    font-family: 'Fraunces', Georgia, serif;
+}

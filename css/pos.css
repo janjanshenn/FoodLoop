@@ -1,0 +1,195 @@
+/*
+ * FOODLoop – POS / Cashier Terminal Styles
+ */
+
+/* POS Terminal Layout */
+.pos-layout {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: var(--space-m);
+}
+
+@media (max-width: 1024px) {
+    .pos-layout {
+        grid-template-columns: 1fr;
+    }
+}
+
+.pos-section {
+    display: flex;
+    flex-direction: column;
+}
+
+.menu-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+    gap: var(--space-s);
+}
+
+/* Solid POS Menu Items */
+.menu-item {
+    background-color: var(--bg-card);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-m);
+    padding: var(--space-s);
+    cursor: pointer;
+    transition: var(--transition-clean);
+    text-align: center;
+    box-shadow: var(--shadow-soft);
+    position: relative;
+    top: 0;
+}
+
+.menu-item:hover {
+    border-color: var(--color-success);
+    box-shadow: var(--shadow-medium);
+}
+
+.menu-item img {
+    width: 100%;
+    height: 100px;
+    object-fit: cover;
+    border-radius: var(--radius-s);
+    margin-bottom: var(--space-xs);
+}
+
+.menu-item h4 {
+    font-size: 14px;
+    margin-bottom: 4px;
+    color: var(--text-primary);
+}
+
+.pos-price {
+    color: var(--color-accent);
+    font-weight: 700;
+    font-size: 14px;
+    margin: 0;
+}
+
+/* Order Panel POS */
+.order-panel {
+    background-color: var(--bg-card);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-m);
+    padding: var(--space-m);
+    display: flex;
+    flex-direction: column;
+    box-shadow: var(--shadow-soft);
+    min-height: 400px;
+}
+
+.order-panel-title {
+    font-size: 16px;
+    font-weight: 600;
+    border-bottom: 1px solid var(--border-color);
+    padding-bottom: var(--space-xs);
+    margin-bottom: var(--space-s);
+}
+
+.order-items {
+    flex-grow: 1;
+    overflow-y: auto;
+    margin-bottom: var(--space-s);
+}
+
+.order-item-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: var(--space-xs) 0;
+    border-bottom: 1px solid var(--border-color-light);
+    font-size: 14px;
+    color: var(--text-primary);
+    background: none !important;
+    box-shadow: none !important;
+    border-radius: 0 !important;
+}
+
+.order-panel-footer {
+    margin-top: auto;
+    border-top: 1px solid var(--border-color);
+    padding-top: var(--space-s);
+}
+
+.order-total-row {
+    display: flex;
+    justify-content: space-between;
+    font-size: 20px;
+    font-weight: 700;
+    color: var(--text-primary);
+    margin-bottom: var(--space-s);
+    border-top: none !important;
+    padding-top: 0 !important;
+}
+
+.pos-submit-btn {
+    width: 100% !important;
+    font-size: 15px !important;
+    font-weight: 700 !important;
+    padding: 14px !important;
+    background-color: var(--color-success) !important;
+    color: var(--text-light) !important;
+    border: none !important;
+    border-radius: var(--radius-s) !important;
+    box-shadow: none !important;
+    transition: var(--transition-clean) !important;
+}
+
+.pos-submit-btn:hover {
+    background-color: #213c30 !important;
+    transform: translateY(-1px) !important;
+}
+
+/* Category Filters */
+.cat-tabs {
+    display: flex;
+    gap: var(--space-xs);
+    flex-wrap: wrap;
+    margin-bottom: var(--space-s);
+}
+
+.cat-tab {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    background-color: var(--bg-card);
+    color: var(--text-secondary);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-s);
+    padding: 8px 16px;
+    font-size: 13px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: var(--transition-clean);
+    margin-top: 0;
+    box-shadow: none;
+}
+
+.cat-tab:hover {
+    border-color: var(--color-accent);
+    color: var(--color-accent);
+    background-color: var(--bg-canvas);
+    transform: translateY(-1px);
+}
+
+.cat-tab.active {
+    background-color: var(--color-accent) !important;
+    color: var(--text-light) !important;
+    border-color: var(--color-accent) !important;
+    transform: translateY(0);
+    box-shadow: none !important;
+    border-radius: var(--radius-s) !important;
+}
+
+.cat-tab.active:hover {
+    background-color: var(--color-accent-hover) !important;
+}
+
+/* POS specific active category */
+#pos-cat-tabs .cat-tab.active {
+    background-color: var(--color-success) !important;
+    border-color: var(--color-success) !important;
+}
+
+#pos-cat-tabs .cat-tab:hover {
+    border-color: var(--color-success);
+    color: var(--color-success);
+}

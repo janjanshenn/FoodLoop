@@ -1,0 +1,96 @@
+/*
+ * FOODLoop – Cooking Station Styles
+ */
+
+.cooking-layout {
+    display: grid;
+    grid-template-columns: 1fr 2.2fr;
+    gap: var(--space-m);
+    align-items: start;
+}
+
+@media (max-width: 1024px) {
+    .cooking-layout {
+        grid-template-columns: 1fr;
+    }
+}
+
+.cook-dish-info-card {
+    background-color: var(--border-color-light);
+    border-left: 4px solid var(--color-accent);
+    padding: var(--space-s);
+    margin-top: var(--space-s);
+    border-radius: var(--radius-s);
+}
+
+.cook-dish-info-content {
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--text-primary);
+}
+
+.cook-warning-message {
+    background-color: rgba(156, 56, 26, 0.08);
+    border-left: 4px solid var(--color-warning);
+    padding: var(--space-s);
+    margin-top: var(--space-s);
+    border-radius: var(--radius-s);
+    color: var(--color-warning);
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.badge-stock {
+    display: inline-block;
+    padding: 4px 8px;
+    border-radius: 4px;
+    font-size: 12px;
+    font-weight: 600;
+    text-transform: capitalize;
+}
+
+.badge-stock.in-stock {
+    background-color: rgba(42, 77, 62, 0.1);
+    color: var(--color-success);
+}
+
+.badge-stock.low-stock {
+    background-color: rgba(156, 56, 26, 0.1);
+    color: var(--color-warning);
+}
+
+.badge-stock.out-of-stock {
+    background-color: rgba(156, 56, 26, 0.2);
+    color: var(--color-warning);
+    border: 1px dashed var(--color-warning);
+}
+
+.cook-qty-input {
+    width: 90px !important;
+    margin: 0 !important;
+    padding: 6px 10px !important;
+    text-align: right;
+    border: 1px solid var(--border-color) !important;
+    border-radius: var(--radius-s) !important;
+}
+
+.cook-qty-input:focus {
+    border-color: var(--color-accent) !important;
+    box-shadow: 0 0 0 2px rgba(217, 119, 6, 0.1) !important;
+}
+
+.btn-remove-ing {
+    background-color: transparent !important;
+    color: var(--color-warning) !important;
+    padding: 4px 8px !important;
+    font-size: 16px !important;
+    font-weight: bold !important;
+    border-radius: var(--radius-s);
+    border: none;
+    cursor: pointer;
+    transition: background-color var(--transition-clean);
+}
+
+.btn-remove-ing:hover {
+    background-color: rgba(156, 56, 26, 0.08) !important;
+}

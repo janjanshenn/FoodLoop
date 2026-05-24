@@ -1,0 +1,173 @@
+/*
+ * FOODLoop – Base Styles & Tokens
+ */
+
+@import url('https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300;9..144,400;9..144,500;9..144,600;9..144,700&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap');
+
+:root {
+    /* Color Tokens */
+    --bg-canvas: #FCFAF7;           /* Warm organic off-white canvas */
+    --bg-card: #FFFFFF;             /* Pure white for content containers */
+    --bg-sidebar: #16231E;          /* Deep organic green-slate matte */
+    
+    --text-primary: #1B2421;        /* Dark slate-charcoal for high-contrast headers */
+    --text-secondary: #5C6360;      /* Medium slate-grey for body text */
+    --text-muted: #8E9692;          /* Light slate-grey for metadata/disabled states */
+    --text-light: #F7FAF9;          /* Near-white for text on dark backgrounds */
+    
+    /* Brand Accent & Semantic Colors */
+    --color-accent: #D97706;        /* Warm Honey Gold (Single active accent) */
+    --color-accent-hover: #B45309;  
+    --color-success: #2A4D3E;       /* Deep Jade Green for success status */
+    --color-warning: #9C381A;       /* Terracotta Rust for alerts/low-stock */
+    
+    /* Spacing Grid (Strict 8px system) */
+    --space-xs: 8px;
+    --space-s: 16px;
+    --space-m: 24px;
+    --space-l: 32px;
+    
+    /* Structural Elements */
+    --border-color: #EAE6DF;        /* Soft warm-grey border */
+    --border-color-light: #F3EFE9;
+    --radius-s: 6px;                /* Moderated radius for buttons/badges/inputs */
+    --radius-m: 8px;                /* Moderated radius for cards/panels */
+    --shadow-soft: 0 2px 12px rgba(27, 36, 33, 0.04);
+    --shadow-medium: 0 4px 20px rgba(27, 36, 33, 0.06);
+    
+    /* Transition Spring */
+    --transition-clean: 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* Base resets & layouts */
+body {
+    font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+    background-color: var(--bg-canvas);
+    color: var(--text-secondary);
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+}
+
+.container {
+    max-width: 600px;
+    margin: 80px auto;
+    padding: var(--space-l);
+    background-color: var(--bg-card);
+    border: 1px solid var(--border-color);
+    box-shadow: var(--shadow-soft);
+    border-radius: var(--radius-m);
+    text-align: center;
+}
+
+.hidden {
+    display: none !important;
+}
+
+/* Headings with Fraunces serif */
+h1, h2, h3, h4 {
+    font-family: 'Fraunces', Georgia, serif;
+    color: var(--text-primary);
+    margin-top: 0;
+    margin-bottom: var(--space-xs);
+    font-weight: 600;
+}
+
+h1 { font-size: 28px; }
+h2 { font-size: 22px; }
+h3 { font-size: 18px; }
+h4 { font-size: 15px; }
+
+/* Restrained, solid buttons */
+button {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    background-color: var(--color-accent);
+    color: var(--text-light);
+    border: none;
+    padding: 12px 20px;
+    border-radius: var(--radius-s);
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 600;
+    transition: var(--transition-clean);
+    box-shadow: none;
+    text-transform: none;
+    letter-spacing: normal;
+}
+
+button:hover {
+    background-color: var(--color-accent-hover);
+    transform: translateY(-1px);
+}
+
+button:active {
+    transform: translateY(0);
+}
+
+button.btn-secondary {
+    background-color: #EAE6DF;
+    color: var(--text-primary);
+}
+
+button.btn-secondary:hover {
+    background-color: #DDD8D0;
+}
+
+/* Inputs & Forms */
+input, select {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    padding: 12px var(--space-s);
+    margin: var(--space-xs) 0 var(--space-s) 0;
+    width: 100%;
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-s);
+    background-color: #FFFFFF;
+    transition: var(--transition-clean);
+    font-size: 14px;
+    box-sizing: border-box;
+    color: var(--text-primary);
+    font-weight: 500;
+}
+
+input:focus, select:focus {
+    outline: none;
+    border-color: var(--color-accent);
+    box-shadow: 0 0 0 3px rgba(217, 119, 6, 0.1);
+}
+
+input::placeholder {
+    color: var(--text-muted);
+}
+
+label {
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--text-primary);
+    display: block;
+    text-align: left;
+}
+
+.form-row {
+    display: flex;
+    gap: var(--space-s);
+    margin-top: var(--space-s);
+}
+
+.flex-1 {
+    flex: 1;
+}
+
+.flex-2 {
+    flex: 2;
+}
+
+.flex-2-mb0 {
+    flex: 2;
+    margin-bottom: 0;
+}
+
+.flex-1-mb0 {
+    flex: 1;
+    margin-bottom: 0;
+}

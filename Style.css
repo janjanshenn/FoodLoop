@@ -1,0 +1,14 @@
+/* 
+ * FOODLoop – Style.css 
+ * Clean Professional Culinary Design System (Anti-Vibecoding Rules Applied)
+ * Organized into modular sub-stylesheets
+ */
+
+@import url('css/base.css');
+@import url('css/layout.css');
+@import url('css/auth.css');
+@import url('css/dashboard.css');
+@import url('css/pos.css');
+@import url('css/cooking.css');
+@import url('css/customer.css');
+@import url('css/components.css?v=1.7');
